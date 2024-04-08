@@ -30,3 +30,12 @@ jobs:
         run: |
           python find_lowest_number.py test_data/test3_input.txt test_output.txt
           diff --ignore-all-space test_output.txt test_data/test3_expected.txt
+
+      - name: Upload Output Files as Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-output-files
+          path: |
+            test_output1.txt
+            test_output2.txt
+            test_output3.txt
